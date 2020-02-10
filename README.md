@@ -14,7 +14,7 @@ If you have any questions/issues about the package, please email me at **diptavo
 
 GAUSS requires two input files
 
-- Gene-based p-value file in flat-text format, **without** headers. The file should contain at least two columns: Gene-name and the corresponding p-values. An example has been provided: *example_gene_pval.txt*
+- Gene-based p-value file in flat-text format, **without** headers. The file should contain at least two columns: Gene-name and the corresponding p-values. An example has been provided: *example_gene_pval.txt*. The columns do not need to be in a particular order and there can be additional columns as well. Please use **Gene-Symbols** for the genes.
 
 - GMT file in flat text format, **with** headers. This file should be in the format as specified in *example_gmt.txt*. The first column contains the name of the gene-set, second column contains information on it (possibly URLs) and the thrid column contains the list of genes in the gene-set comma separated.
 
