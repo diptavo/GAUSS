@@ -24,7 +24,7 @@ The GAUSS codes depend on several existing R packages: *optparse, data.table, gP
 
 The repository can be cloned as:
 
-'git clone https://github.com/diptavo/GAUSS.git'
+`git clone https://github.com/diptavo/GAUSS.git`
 
 # Usage
 
