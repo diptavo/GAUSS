@@ -37,5 +37,5 @@ Rscript --vanilla ~/GAUSS/GAUSS_All.R --summary ~/GAUSS/example_gene_pval.txt --
 ```
 # Options
 
--`--summary` : Gene-based p-value file in flat-text format **without** header
+- `--summary` : Gene-based p-value file in flat-text format **without** header
 
