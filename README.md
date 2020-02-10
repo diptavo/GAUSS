@@ -20,7 +20,7 @@ GAUSS requires two input files
 
 # Prerequisites and download
 
-The GAUSS codes depend on several existing R packages: *optparse, data.table, gPdtest, POT, MASS*. Please download and install them prior to running GAUSS.
+The GAUSS codes depend on several existing R packages: `optparse`, `data.table`, `gPdtest`, `POT`, `MASS`. Please download and install them prior to running GAUSS.
 
 The repository can be cloned as:
 
