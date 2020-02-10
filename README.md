@@ -1,1 +1,1 @@
-\textbf{GAUSS}
+**GAUSS**
