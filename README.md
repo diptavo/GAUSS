@@ -29,5 +29,6 @@ The repository can be cloned as:
 # Usage
 
 Once downloaded, GAUSS can be run with following commands (assuming the path to GAUSS is `~/GAUSS/`)
+
 `Rscript --vanilla ~/GAUSS/GAUSS_All.R --summary ~/GAUSS/example_gene_pval.txt --gmtFile ~/GAUSS/example_gmt.txt --out ex1 --pvalue 2 --geneName 1 &`
 
