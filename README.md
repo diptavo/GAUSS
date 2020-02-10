@@ -31,8 +31,11 @@ The repository can be cloned as:
 Once downloaded, GAUSS can be run with following commands (assuming the path to GAUSS is `~/GAUSS/`)
 
 ```
-{
+
 Rscript --vanilla ~/GAUSS/GAUSS_All.R --summary ~/GAUSS/example_gene_pval.txt --gmtFile ~/GAUSS/example_gmt.txt --out ex1 --pvalue 2 --geneName 1 &
-}
+
 ```
+# Options
+
+-`--summary` : Gene-based p-value file in flat-text format **without** header
 
