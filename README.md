@@ -37,5 +37,10 @@ Rscript --vanilla ~/GAUSS/GAUSS_All.R --summary ~/GAUSS/example_gene_pval.txt --
 ```
 # Options
 
-- `--summary` : Gene-based p-value file in flat-text format **without** header
+- `--summary` : Gene-based p-value file in flat-text format **without** header.
+- `--geneName` : the column number in the above file that contains the names of the genes; defualt value is `1`. 
+- `--pvalue` : the column number in the above file that contains the p-values for the genes; defualt value is `2`. 
+- `--out`: the prefix of the output file; default is `out`. Two files will be generated: `.log` contains some information on running and `.out` contains the gene-set, p-value and the corresponding CS genes.
+- `--gmtFile` : GMT file containing the list of gene-set, one gene-set per line in the format mentioned above, **with** a header line.
+
 
