@@ -39,8 +39,8 @@ Once installed, GAUSS can be run with following commands (assuming the path to G
 library(GAUSS)
 
 GAUSS_All(summary_file = "~/GAUSS/example_gene_pval.txt", gene_name = 1, pv_name = 2, output_file = "example_out", gmt = "~/GAUSS/example_gmt.txt", ags = "def",verbose = TRUE,parallel = FALSE)
-Rscript --vanilla ~/GAUSS/GAUSS_All.R --summary ~/GAUSS/example_gene_pval.txt --gmtFile ~/GAUSS/example_gmt.txt --out ex1 --pvalue 2 --geneName 1 &
 
+### This will produce two files: example_out.log and example_out.out in about 0.7 minutes.  
 ```
 # Options
 

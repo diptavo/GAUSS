@@ -1,4 +1,4 @@
-GAUSS_All <- function(summary_file, gene_name, pv_name,output_file,gmt,verbose = TRUE,ags = "def",parallel = FALSE,jobs,jobfile,start,stop,is.appx = TRUE){
+GAUSS_All <- function(summary_file, gene_name, pv_name,output_file,gmt,verbose = TRUE,ags = "def",parallel = FALSE,jobs,jobfile,start=NA,stop=NA,is.appx = TRUE){
   
   LOGF<- paste0(output_file,".log")
   OUTF <-paste0(output_file,".out") 
