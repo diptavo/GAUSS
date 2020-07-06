@@ -24,17 +24,21 @@ GAUSS was built using R (v 3.6.0).The GAUSS codes depend on several existing R p
 
 The repository can be cloned as:
 
-```git clone https://github.com/diptavo/GAUSS.git
+```
+ git clone https://github.com/diptavo/GAUSS.git
  cd GAUSS/
  R CMD INSTALL GAUSS_1.0.tar.gz 
 ```
 
 # Usage
 
-Once downloaded, GAUSS can be run with following commands (assuming the path to GAUSS is `~/GAUSS/`)
+Once installed, GAUSS can be run with following commands (assuming the path to GAUSS repository is `~/GAUSS/`)
 
-```
+```R
 
+library(GAUSS)
+
+GAUSS_All(summary_file = "~/GAUSS/example_gene_pval.txt", gene_name = 1, pv_name = 2, output_file = "example_out", gmt = "~/GAUSS/example_gmt.txt", ags = "def",verbose = TRUE,parallel = FALSE)
 Rscript --vanilla ~/GAUSS/GAUSS_All.R --summary ~/GAUSS/example_gene_pval.txt --gmtFile ~/GAUSS/example_gmt.txt --out ex1 --pvalue 2 --geneName 1 &
 
 ```
