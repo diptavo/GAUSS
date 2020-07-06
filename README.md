@@ -24,9 +24,10 @@ GAUSS was built using R (v 3.6.0).The GAUSS codes depend on several existing R p
 
 The repository can be cloned as:
 
-`git clone https://github.com/diptavo/GAUSS.git
+```git clone https://github.com/diptavo/GAUSS.git
  cd GAUSS/
- R CMD INSTALL GAUSS_1.0.tar.gz `
+ R CMD INSTALL GAUSS_1.0.tar.gz 
+```
 
 # Usage
 
