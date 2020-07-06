@@ -1,0 +1,10 @@
+Package: GAUSS
+Type: Package
+Title: What the package does (short line)
+Version: 1.0
+Date: 2020-07-01
+Author: Diptavo Dutta
+Maintainer: Diptavo Dutta <diptavo@umich.edu>
+Description: Gene-set association analysis using sparse signals
+Depends: optparse, data.table, gPdtest, POT, MASS
+License: GPL (>=2)
