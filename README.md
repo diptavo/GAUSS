@@ -40,14 +40,23 @@ Once installed, GAUSS can be run with following commands (assuming the path to G
 library(GAUSS)
 
 GAUSS_All(summary_file = "~/GAUSS/example_gene_pval.txt", gene_name = 1, pv_name = 2, output_file = "example_out", gmt = "~/GAUSS/example_gmt.txt", ags = "def",verbose = TRUE,parallel = FALSE)
+### This will produce two files: example_out.log and example_out.out in about 0.7 minutes. 
 
 GAUSS_All(summary_file = "~/GAUSS/example_gene_pval.txt", gene_name = 1, pv_name = 2, output_file = "example_out", gmt = "~/GAUSS/example_gmt2.txt", ags = "def",verbose = TRUE,parallel = FALSE)
-
-### This will produce two files: example_out.log and example_out.out in about 0.7 minutes.  
+### This will produce two files: example_out.log and example_out.out in about 6 minutes.  
 ```
 The output files will contain the following information:
 `example_out.out`: Flat text file containing gene-set, GAUSS p-value and selected CS genes in an R readable format using `read.table()`.
 `example_out.log`: Log file containing run-time information for each gene-set and the overall run-time.
+
+To run GAUSS on a subset of gene-sets present in the GMT file, use the following command:
+
+```R
+GAUSS_All(summary_file = "~/GAUSS/example_gene_pval.txt", gene_name = 1, pv_name = 2, output_file = "example_out", gmt = "~/GAUSS/example_gmt2.txt", ags = "def",verbose = TRUE,parallel = TRUE,start = 21,stop = 50)
+
+### This will run GAUSS on the 21st gene-set (GO_FOREBRAIN_NEURON_DEVELOPMENT) through 50th gene-set (GO_ACYLGLYCEROL_HOMEOSTASIS)
+```
+
 
 # Options
 
