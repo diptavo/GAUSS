@@ -32,6 +32,7 @@ The repository can be cloned as:
 
 # Usage
 
+Several example files are provided with the package for the user to verify the formats and for toy-examples.
 Once installed, GAUSS can be run with following commands (assuming the path to GAUSS repository is `~/GAUSS/`)
 
 ```R
@@ -40,8 +41,14 @@ library(GAUSS)
 
 GAUSS_All(summary_file = "~/GAUSS/example_gene_pval.txt", gene_name = 1, pv_name = 2, output_file = "example_out", gmt = "~/GAUSS/example_gmt.txt", ags = "def",verbose = TRUE,parallel = FALSE)
 
+GAUSS_All(summary_file = "~/GAUSS/example_gene_pval.txt", gene_name = 1, pv_name = 2, output_file = "example_out", gmt = "~/GAUSS/example_gmt2.txt", ags = "def",verbose = TRUE,parallel = FALSE)
+
 ### This will produce two files: example_out.log and example_out.out in about 0.7 minutes.  
 ```
+The output files will contain the following information:
+`example_out.out`: Flat text file containing gene-set, GAUSS p-value and selected CS genes in an R readable format using `read.table()`.
+`example_out.log`: Log file containing run-time information for each gene-set and the overall run-time.
+
 # Options
 
 - `--summary` : Gene-based p-value file in flat-text format **without** header.
