@@ -121,10 +121,15 @@ You can run each line of this file appropriately in batch mode, HPC etc.
 
 There are a few other options that can be used:
 
-- `--path` : The path to the GAUSS directory. By default it is set to `~/GAUSS/`
 - `--verbose` : Outputs some run-time messages in `.log` file; default is `TRUE`
 - `--ags` : A path to a file that contains some control options for GAUSS. Please don't change this. This will be updated in a later version.
 
+For full list of options please run
+
+```
+Rscript ~/GAUSS/utils/run_GAUSS_All.R --help
+
+```
 # Results
 
 We performed the association analysis of 1,403 binary phenotypes from UK-Biobank with `C2` (Curated pathways) and `C5` (GO pathways) from [MSigDB v6.2](https://data.broadinstitute.org/gsea-msigdb/msigdb/release/6.2/) using GAUSS. The results can be visualized using a [PheWeb-like visual server](http://ukb-pathway.leelabsg.org/). 
