@@ -57,8 +57,36 @@ GAUSS_All(summary_file = "~/GAUSS/example_gene_pval.txt", gene_name = 1, pv_name
 ### This will run GAUSS on the 21st gene-set (GO_FOREBRAIN_NEURON_DEVELOPMENT) through 50th gene-set (GO_ACYLGLYCEROL_HOMEOSTASIS)
 ```
 
+## Options for `GAUSS_All(.)`
 
-#Run parallel jobs
+- `summary_file`: Summary file containing the gene-names and corresponding p-values
+
+- `gene_name`: Column number for gene names in summary file
+
+- `pv_name`: Column number for p-value in summary file
+
+- `output_file`: prefix for output file names
+
+- `gmt`: GMT file containing the list of gene-set, one gene-set per line
+
+- `verbose`: Print extra output; default = TRUE
+
+- `ags`: control arguments for running GAUSS
+
+- `parallel`: logical indicating whether parallel jobs are to be created; default = FALSE
+
+- `jobs`: number of parallel jobs to be created if parallel = TRUE
+
+- `jobfile`: name of the output file with parallel jobs for GAUSS if parallel = TRUE
+
+- `start`: starting point of the GMT file if parallel = TRUE
+
+- `stop`: stopping point of the GMT file if parallel = TRUE
+
+
+
+
+# Run parallel jobs
 
 For a GMT file containing many gene-set definitions, it is much easier to divide it into multiple jobs as:
 
@@ -79,7 +107,7 @@ Rscript run_GAUSS_All.R --summary /Users/diptavo/GAUSS/example_gene_pval.txt --g
 
 You can run each line of this file appropriately in batch mode, HPC etc.  
 
-# Options for `run_GAUSS_All.R`
+## Options for `run_GAUSS_All.R`
 
 - `--summary` : Gene-based p-value file in flat-text format **without** header.
 - `--geneName` : the column number in the above file that contains the names of the genes; defualt value is `1`. 

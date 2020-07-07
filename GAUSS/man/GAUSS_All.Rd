@@ -32,9 +32,6 @@ Summary file containing the gene-names and corresponding p-values
   \item{ags}{
   control arguments for running GAUSS
 }
-  \item{path}{
-  path to files for GAUSS
-}
   \item{parallel}{
   logical indicating whether parallel jobs are to be created; default = FALSE
 }
