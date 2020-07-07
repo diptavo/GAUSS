@@ -6,7 +6,7 @@ GAUSS provides a powerful and computationally effective tool to perform gene-set
 
 # Citation 
 
-If you GAUSS to analyze gene-set associations, please consider citing our [biorXiv paper](https://www.biorxiv.org/content/10.1101/799791v1). 
+If you GAUSS to analyze gene-set associations, please consider citing our [biorXiv paper](https://www.biorxiv.org/content/10.1101/799791v2). 
 
 If you have any questions/issues about the package, please email me at **diptavo21@jhu.edu**
 
@@ -14,15 +14,16 @@ If you have any questions/issues about the package, please email me at **diptavo
 
 GAUSS requires two input files
 
-- Gene-based p-value file in flat-text format, **without** headers. The file should contain at least two columns: Gene-name and the corresponding p-values. An example has been provided: *example_gene_pval.txt*. The columns do not need to be in a particular order and there can be additional columns as well. Please use **Gene-Symbols** for the genes.
+- Summary gene-based p-value file in flat-text format, **without** headers. The file should contain at least two columns: Gene-name and the corresponding p-values. An example has been provided: *example_gene_pval.txt*. The columns do not need to be in a particular order and there can be additional columns as well. Please use **Gene-Symbols** for the genes.
 
 - GMT file in flat text format, **with** headers. This file should be in the format as specified in *example_gmt.txt*. The first column contains the name of the gene-set, second column contains information on it (possibly URLs) and the thrid column contains the list of genes in the gene-set comma separated.
 
 # Prerequisites and download
 
-GAUSS was built using R (v 3.6.0).The GAUSS codes depend on several existing R packages: `optparse`, `data.table`, `gPdtest`, `POT`, `MASS`. Please download and install them prior to running GAUSS. Upon installing the required packages no further installation is necessary.
+GAUSS was built using R (v 3.6.0). In general any version of R `>= 3.5` should work. 
+The GAUSS codes depend on several existing R packages: `optparse`, `data.table`, `gPdtest`, `POT`, `MASS`. Please download and install them prior to running GAUSS.
 
-The repository can be cloned as:
+The repository can be cloned and installed as:
 
 ```
  git clone https://github.com/diptavo/GAUSS.git
@@ -33,6 +34,9 @@ The repository can be cloned as:
 # Usage
 
 Several example files are provided with the package for the user to verify the formats and for toy-examples.
+- GMT files: `example_gmt.txt` and `example_gmt2.txt`
+- gene-based summary p-value files: `example_gene_pval.txt`
+
 Once installed, GAUSS can be run with following commands (assuming the path to GAUSS repository is `~/GAUSS/`)
 
 ```R
@@ -71,7 +75,7 @@ GAUSS_All(summary_file = "~/GAUSS/example_gene_pval.txt", gene_name = 1, pv_name
 
 - `verbose`: Print extra output; default = TRUE
 
-- `ags`: control arguments for running GAUSS
+- `ags`: settings for control arguments for running GAUSS; options are "def" or "prec"; "def" should be used for a quick initial scan and the significant associations can be followed up using "prec".
 
 - `parallel`: logical indicating whether parallel jobs are to be created; default = FALSE
 
@@ -125,6 +129,6 @@ There are a few other options that can be used:
 
 We performed the association analysis of 1,403 binary phenotypes from UK-Biobank with `C2` (Curated pathways) and `C5` (GO pathways) from [MSigDB v6.2](https://data.broadinstitute.org/gsea-msigdb/msigdb/release/6.2/) using GAUSS. The results can be visualized using a [PheWeb-like visual server](http://ukb-pathway.leelabsg.org/). 
 
-# Miscellaneous 
+# Update Log
 
-This is an initial developement version. This will be updated along with the manuscript. 
+- 07/06/2020: GAUSS published as a R-package along with detailed documentations and utility function.
