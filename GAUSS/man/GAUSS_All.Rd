@@ -30,7 +30,7 @@ Summary file containing the gene-names and corresponding p-values
   Print extra output; default = TRUE
 }
   \item{ags}{
-  control arguments for running GAUSS
+settings for control arguments for running GAUSS; options are "def" or "prec"; "def" should be used for a quick initial scan and the significant associations can be followed up using "prec".
 }
   \item{parallel}{
   logical indicating whether parallel jobs are to be created; default = FALSE
