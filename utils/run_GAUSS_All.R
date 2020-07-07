@@ -68,7 +68,7 @@ if(is.parallel){
   }else{
     sink(jobfile)
     for(i in 1:(jobs)){
-      OUTF <- paste(output_file,"_",i)
+      OUTF <- paste0(output_file,"_",i)
       cat(paste0("Rscript run_GAUSS_All.R --summary ",summary_file," --geneName ",gene_name," --pvalue ",pv_name," --out ",OUTF," --gmtFile ",gmt," --verbose ",verbose," --ags ",ags," --parallel FALSE --start ",indx[i]+1," --stop ",indx[i+1]))
       cat(paste0("\n"));
     }

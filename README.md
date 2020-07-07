@@ -46,8 +46,8 @@ GAUSS_All(summary_file = "~/GAUSS/example_gene_pval.txt", gene_name = 1, pv_name
 ### This will produce two files: example_out.log and example_out.out in about 6 minutes.  
 ```
 The output files will contain the following information:
-`example_out.out`: Flat text file containing gene-set, GAUSS p-value and selected CS genes in an R readable format using `read.table()`.
-`example_out.log`: Log file containing run-time information for each gene-set and the overall run-time.
+- `example_out.out`: Flat text file containing gene-set, GAUSS p-value and selected CS genes in an R readable format using `read.table()`.
+- `example_out.log`: Log file containing run-time information for each gene-set and the overall run-time.
 
 To run GAUSS on a subset of gene-sets present in the GMT file, use the following command:
 
@@ -58,7 +58,28 @@ GAUSS_All(summary_file = "~/GAUSS/example_gene_pval.txt", gene_name = 1, pv_name
 ```
 
 
-# Options
+#Run parallel jobs
+
+For a GMT file containing many gene-set definitions, it is much easier to divide it into multiple jobs as:
+
+```shell
+
+Rscript ~/GAUSS/utils/run_GAUSS_All.R --summary ~/GAUSS/example_gene_pval.txt --gmtFile ~/GAUSS/example_gmt.txt --out ex1 --pvalue 2 --geneName 1 --parallel TRUE --jobs 10 -f ~/AJ.txt
+
+```
+This will create 10 `Rscript` jobs in the file `~/AJ.txt`. 
+
+```shell
+head -2 ~/AJ.txt
+
+Rscript run_GAUSS_All.R --summary /Users/diptavo/GAUSS/example_gene_pval.txt --geneName 1 --pvalue 2 --out ex1_1 --gmtFile /Users/diptavo/GAUSS/example_gmt.txt --verbose TRUE --ags def --parallel FALSE --start 1 --stop 20
+Rscript run_GAUSS_All.R --summary /Users/diptavo/GAUSS/example_gene_pval.txt --geneName 1 --pvalue 2 --out ex1_2 --gmtFile /Users/diptavo/GAUSS/example_gmt.txt --verbose TRUE --ags def --parallel FALSE --start 21 --stop 40
+
+```
+
+You can run each line of this file appropriately in batch mode, HPC etc.  
+
+# Options for `run_GAUSS_All.R`
 
 - `--summary` : Gene-based p-value file in flat-text format **without** header.
 - `--geneName` : the column number in the above file that contains the names of the genes; defualt value is `1`. 
