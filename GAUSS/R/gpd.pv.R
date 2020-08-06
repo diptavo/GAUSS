@@ -18,7 +18,7 @@ function(max.stat,tst,ct=250,ct.min = 100,stp = -10,tl = 500,thr = 0.05,LOGF = "
   f2 = fitgpd(max.stat,threshold=t,est = "mgf",stat = "AD2R")
   pv3 <- pgpd((ss-t),shape = f2$fitted.values[2],scale = f2$fitted.values[1],lower.tail = F)
   pv.gpd <- as.numeric(pv3*s/length(max.stat))
-  if(pv.gpd < 1e-20){
+  if(pv.gpd < 1e-200){
     pv.gpd <- pexp(ss-t,rate = 1/mean(ms1),lower.tail = F)*s/length(max.stat)
   }
   return(pv.gpd)
