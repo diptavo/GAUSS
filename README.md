@@ -136,4 +136,5 @@ We performed the association analysis of 1,403 binary phenotypes from UK-Biobank
 
 # Update Log
 
+- 12/16/2020: TWAS-FUSION reference panel added
 - 07/06/2020: GAUSS published as a R-package along with detailed documentations and utility function.
