@@ -44,9 +44,11 @@ Once installed, GAUSS can be run with following commands (assuming the path to G
 library(GAUSS)
 
 GAUSS_All(summary_file = "~/GAUSS/example_gene_pval.txt", gene_name = 1, pv_name = 2, output_file = "example_out", gmt = "~/GAUSS/example_gmt.txt", ags = "def",verbose = TRUE,parallel = FALSE)
+closeAllConnections()
 ### This will produce two files: example_out.log and example_out.out in about 0.7 minutes. 
 
 GAUSS_All(summary_file = "~/GAUSS/example_gene_pval.txt", gene_name = 1, pv_name = 2, output_file = "example_out", gmt = "~/GAUSS/example_gmt2.txt", ags = "def",verbose = TRUE,parallel = FALSE)
+closeAllConnections()
 ### This will produce two files: example_out.log and example_out.out in about 6 minutes.  
 ```
 The output files will contain the following information:
@@ -57,6 +59,7 @@ To run GAUSS on a subset of gene-sets present in the GMT file, use the following
 
 ```R
 GAUSS_All(summary_file = "~/GAUSS/example_gene_pval.txt", gene_name = 1, pv_name = 2, output_file = "example_out", gmt = "~/GAUSS/example_gmt2.txt", ags = "def",verbose = TRUE,parallel = TRUE,start = 21,stop = 50)
+closeAllConnections()
 
 ### This will run GAUSS on the 21st gene-set (GO_FOREBRAIN_NEURON_DEVELOPMENT) through 50th gene-set (GO_ACYLGLYCEROL_HOMEOSTASIS)
 ```
@@ -75,6 +78,8 @@ GAUSS_All(summary_file = "~/GAUSS/example_gene_pval.txt", gene_name = 1, pv_name
 
 - `verbose`: Print extra output; default = TRUE
 
+- `method`: Method/test used to generate the gene-based p-values. The reference Vh correlation will be loaded according to this. Currently the supported options are "SKAT-CR" (for SKAT Common-Rare) or "TWAS.X" (for TWAS on tissue X. e.g: "TWAS.Whole_Blood"). For full list of available reference Vh, see `data/` directory. 
+
 - `ags`: settings for control arguments for running GAUSS; options are "def" or "prec"; "def" should be used for a quick initial scan and the significant associations can be followed up using "prec".
 
 - `parallel`: logical indicating whether parallel jobs are to be created; default = FALSE
@@ -87,8 +92,11 @@ GAUSS_All(summary_file = "~/GAUSS/example_gene_pval.txt", gene_name = 1, pv_name
 
 - `stop`: stopping point of the GMT file if parallel = TRUE
 
+- `is.appx`: GPD approximation invoked. default = TRUE
 
+- `gpd.est.res`: Number of resampling iterations to estimate GPD parameters. default = 250
 
+- `pv.null.wt1`: User input reference dataset for calculating Vh. Please refer to the manuscript and the next section for more details.
 
 # Run parallel jobs
 
@@ -134,7 +142,24 @@ Rscript ~/GAUSS/utils/run_GAUSS_All.R --help
 
 We performed the association analysis of 1,403 binary phenotypes from UK-Biobank with `C2` (Curated pathways) and `C5` (GO pathways) from [MSigDB v6.2](https://data.broadinstitute.org/gsea-msigdb/msigdb/release/6.2/) using GAUSS. The results can be visualized using a [PheWeb-like visual server](http://ukb-pathway.leelabsg.org/). 
 
+# Creating own reference data (Vh) for customized gene-based tests
+
+You can create your own reference data for conducting GAUSS test if you are not using any of the standard tests included in GAUSS. To create a compatible Vh dataset follow these steps:
+
+- You need the individual level genotype files and an annotation file. In absence of individual level genotypes, an acceptable set of GWAS variants can be obtained from the 1000 Genomes genotypes obtained via the [FUSION or LDSCore packages](http://gusevlab.org/projects/fusion/#installation) `wget https://data.broadinstitute.org/alkesgroup/FUSION/LDREF.tar.bz2`
+
+- The annotation file would contain information on the assignment of variants to genes. The format needs to be compatible with the gene-based test software you are going to use. 
+
+- Independently generate a null phenotype from `N(0,1)` without any variant effects.
+
+- Perform gene-based test using the test/software of your choice, annotation files and individual level genotype data and simulated phenotype data.
+
+- Record the p-values of the genes and convert them to z-values.
+
+- Repeat this step multiple times (100 or 500 or 1000) and obtain a matrix of z-values with dimensions `RxG` where `R` is the number of repeatations (= 100/500/1000 or others as specified) and `G` is the number of genes. Store this matrix and use this as input with option `pv.null.wt1` in `GAUSS_All(.)`
+
 # Update Log
 
+- 01/04/2021: README updated
 - 12/16/2020: TWAS-FUSION reference panel added
 - 07/06/2020: GAUSS published as a R-package along with detailed documentations and utility function.

@@ -1,4 +1,4 @@
-GAUSS_All <- function(summary_file, gene_name, pv_name,output_file,gmt,verbose = TRUE,method = "SKAT-CR",ags = "def",parallel = FALSE,jobs,jobfile,start=NA,stop=NA,gpd.est.res = NULL, is.appx = TRUE){
+GAUSS_All <- function(summary_file, gene_name, pv_name,output_file,gmt,verbose = TRUE,method = "SKAT-CR",ags = "def",parallel = FALSE,jobs,jobfile,start=NA,stop=NA,gpd.est.res = NULL, is.appx = TRUE,pv.null.wt1 = NULL){
   
   LOGF<- paste0(output_file,".log")
   OUTF <-paste0(output_file,".out") 
@@ -13,15 +13,19 @@ GAUSS_All <- function(summary_file, gene_name, pv_name,output_file,gmt,verbose =
     cat(paste0("No approximations invoked. Only resampling p-values of limited precision will be obtained... \n"),file = LOGF,append = T)
   }
   
-  
-  met1 <- grep("TWAS",method);
-  if(length(met1) == 0){
-    data("SKAT_CR", package = "GAUSS"); print("Gene-based p-values from SKAT-CR test.."); cat("Gene-based p-values from SKAT-CR test...\n\n",file = LOGF,append = T)
+  if(is.null(pv.null.wt1)){
+    met1 <- grep("TWAS",method);
+    if(length(met1) == 0){
+      data("SKAT_CR", package = "GAUSS"); print("Gene-based p-values from SKAT-CR test.."); cat("Gene-based p-values from SKAT-CR test...\n\n",file = LOGF,append = T)
+    }else{
+      tissue <- strsplit(method,split = "TWAS.")[[1]][2];
+      datf <- paste0(method); 
+      data(list = datf,package = "GAUSS"); print(paste0("Gene-based p-values from TWAS-FUSION test in ",tissue," tissue ..")); 
+      cat(paste0("Gene-based p-values from TWAS-FUSION test in ",tissue," tissue ...\n\n"),file = LOGF,append = T);
+    }
   }else{
-    tissue <- strsplit(method,split = "TWAS.")[[1]][2];
-    datf <- paste0(method); 
-    data(list = datf,package = "GAUSS"); print(paste0("Gene-based p-values from TWAS-FUSION test in ",tissue," tissue ..")); 
-    cat(paste0("Gene-based p-values from TWAS-FUSION test in ",tissue," tissue ...\n\n"),file = LOGF,append = T);
+    print("user input ref data...")
+    cat("user input ref data ...\n\n",file = LOGF,append = T)
   }
   print("loading ref data...")
   cat("loading ref data ...\n\n",file = LOGF,append = T)
@@ -45,7 +49,7 @@ GAUSS_All <- function(summary_file, gene_name, pv_name,output_file,gmt,verbose =
   
   a1 <- read.table(summary_file); gns <- a1[,ggg]; 
   gns.cmn <- length(intersect(colnames(pv.null.wt1),gns))
-
+  
   print(paste0(gns.cmn," genes in common between the reference panel and genes in the input file"))
   cat(paste0(gns.cmn," genes in common between the reference panel and genes in the input file \n\n"),file = LOGF,append = T)
   
