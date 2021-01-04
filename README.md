@@ -103,9 +103,7 @@ closeAllConnections()
 For a GMT file containing many gene-set definitions, it is much easier to divide it into multiple jobs as:
 
 ```shell
-
 Rscript ~/GAUSS/utils/run_GAUSS_All.R --summary ~/GAUSS/example_gene_pval.txt --gmtFile ~/GAUSS/example_gmt.txt --out ex1 --pvalue 2 --geneName 1 --parallel TRUE --jobs 10 -f ~/AJ.txt
-
 ```
 This will create 10 `Rscript` jobs in the file `~/AJ.txt`. 
 
@@ -142,7 +140,7 @@ Rscript ~/GAUSS/utils/run_GAUSS_All.R --help
 
 We performed the association analysis of 1,403 binary phenotypes from UK-Biobank with `C2` (Curated pathways) and `C5` (GO pathways) from [MSigDB v6.2](https://data.broadinstitute.org/gsea-msigdb/msigdb/release/6.2/) using GAUSS. The results can be visualized using a [PheWeb-like visual server](http://ukb-pathway.leelabsg.org/). 
 
-# Creating own reference data (Vh) for customized gene-based tests
+## Creating own reference data (Vh) for customized gene-based tests
 
 You can create your own reference data for conducting GAUSS test if you are not using any of the standard tests included in GAUSS. To create a compatible Vh dataset follow these steps:
 
@@ -157,6 +155,17 @@ You can create your own reference data for conducting GAUSS test if you are not 
 - Record the p-values of the genes and convert them to z-values.
 
 - Repeat this step multiple times (100 or 500 or 1000) and obtain a matrix of z-values with dimensions `RxG` where `R` is the number of repeatations (= 100/500/1000 or others as specified) and `G` is the number of genes. Store this matrix and use this as input with option `pv.null.wt1` in `GAUSS_All(.)`
+
+An example workflow to create TWAS-FUSION reference Vh for a particular tissue:
+
+- Independently generate a null phenotype from `N(0,1)` without any variant effects.
+
+- Run GWAS with simulated phenotype and variants from 1000 Genomes obtained at the (FUSION package)[https://data.broadinstitute.org/alkesgroup/FUSION/LDREF.tar.bz2] using GWAS pipelines like PLINK, GCTA/fastGWA or EPACTS
+
+- For a given tissue, run TWAS analysis using the summary statistics from the above GWAS and appropriate tissue-specific weights following the (instructions)[http://gusevlab.org/projects/fusion/#typical-analysis-and-output]
+
+- Repeat this multiple (`R`) times and store the resultant null z-values in a matrix format as described above. 
+
 
 # Update Log
 
