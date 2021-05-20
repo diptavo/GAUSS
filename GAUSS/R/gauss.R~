@@ -8,6 +8,8 @@ gauss <-
     if(verbose)
       cat("Preprocessing \n",file = LOGF,append = T)
     
+    print(dim(pv.null.wt1)[1]);
+    print(colnames(pv.null.wt1));
     
     common <- intersect(gene.set,colnames(pv.null.wt1)); excl <- length.path - length(common);
     if(length(common) > 0){

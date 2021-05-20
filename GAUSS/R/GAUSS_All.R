@@ -16,12 +16,13 @@ GAUSS_All <- function(summary_file, gene_name, pv_name,output_file,gmt,verbose =
   if(is.null(pv.null.wt1)){
     met1 <- grep("TWAS",method);
     if(length(met1) == 0){
-      data("SKAT_CR", package = "GAUSS"); print("Gene-based p-values from SKAT-CR test.."); cat("Gene-based p-values from SKAT-CR test...\n\n",file = LOGF,append = T)
+      data("SKAT_CR", package = "GAUSS"); print("Gene-based p-values from SKAT-based test.."); cat("Gene-based p-values from SKAT-based test...\n\n",file = LOGF,append = T)
     }else{
       tissue <- strsplit(method,split = "TWAS.")[[1]][2];
       datf <- paste0(method); 
+      if(file.exists(data(list = datf,package = "GAUSS"))){
       data(list = datf,package = "GAUSS"); print(paste0("Gene-based p-values from TWAS-FUSION test in ",tissue," tissue ..")); 
-      cat(paste0("Gene-based p-values from TWAS-FUSION test in ",tissue," tissue ...\n\n"),file = LOGF,append = T);
+      cat(paste0("Gene-based p-values from TWAS-FUSION test in ",tissue," tissue ...\n\n"),file = LOGF,append = T);}else{stop("Tissue not present. Please recheck in GAUSS/data")}
     }
   }else{
     print("user input ref data...")
@@ -43,16 +44,7 @@ GAUSS_All <- function(summary_file, gene_name, pv_name,output_file,gmt,verbose =
   print(paste0("Number of resamples for GPD approximation is ",ags[2]))
   cat(paste0("Number of resamples for GPD approximation is ",ags[2],"\n"),file = LOGF,append = T)
   
-  print(paste0(dim(pv.null.wt1)[2]," genes in the reference panel"))
-  cat(paste0(dim(pv.null.wt1)[2]," genes in the reference panel \n\n"),file = LOGF,append = T)
-  
-  
-  a1 <- read.table(summary_file); gns <- a1[,ggg]; 
-  gns.cmn <- length(intersect(colnames(pv.null.wt1),gns))
-  
-  print(paste0(gns.cmn," genes in common between the reference panel and genes in the input file"))
-  cat(paste0(gns.cmn," genes in common between the reference panel and genes in the input file \n\n"),file = LOGF,append = T)
-  
+  a1 <- read.table(summary_file); gns <- a1[,gene_name]; 
   
   s1 <- read.table(gmt,header = T); summary_file = read.table(summary_file);
   if(parallel){
@@ -73,12 +65,10 @@ GAUSS_All <- function(summary_file, gene_name, pv_name,output_file,gmt,verbose =
   print(paste0("logging in ...",LOGF))
   print(paste0("output in ... ",OUTF))
   
-  
   cat(paste0("logging in ... ",LOGF,"\n\n"),file = LOGF,append = T)
   cat(paste0("output in ... ",OUTF,"\n\n"),file = LOGF,append = T)
   
-  
-  aaa <- system.time(for(i in 1:dim(s1)[1]){
+   aaa <- system.time(for(i in 1:dim(s1)[1]){
     
     if(verbose){
       cat(paste0("Running gene-set ",i,": ",s1[i,1]),file = LOGF,append = T)
