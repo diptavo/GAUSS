@@ -51,12 +51,16 @@ start <- as.numeric(opt$start)
 stop <- as.numeric(opt$stop)
 
 cat(paste0("Starting GAUSS...\n\n"))
+
 library(GAUSS)
+
+if(is.parallel){
 sink(jobfile)
 cat(paste0("trying to open file..."))
 sink()
-
 jobfile <- normalizePath(jobfile)
+}
+
 
 if(is.parallel){
   s1 <- read.table(gmt,header = T); npath <- nrow(s1); ind <- ceiling(npath/jobs); indx <- seq(0,npath,ind)

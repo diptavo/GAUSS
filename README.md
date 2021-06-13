@@ -6,7 +6,9 @@ GAUSS provides a powerful and computationally effective tool to perform gene-set
 
 # Citation 
 
-If you GAUSS to analyze gene-set associations, please consider citing our [biorXiv paper](https://www.biorxiv.org/content/10.1101/799791v2). 
+If you use GAUSS, please cite our article now publishd in *AJHG*: [A powerful subset-based method identifies gene set associations and improves interpretation in UK Biobank](https://www.sciencedirect.com/science/article/abs/pii/S0002929721000586)
+
+You can find a preprint version of the paper on [biorXiv](https://www.biorxiv.org/content/10.1101/799791v2). 
 
 If you have any questions/issues about the package, please email me at **diptavo21@jhu.edu**
 
@@ -169,6 +171,7 @@ An example workflow to create TWAS-FUSION reference Vh for a particular tissue:
 
 # Update Log
 
+- 06/13/2021: Bugs in options and parallel job creation fixed
 - 01/04/2021: README updated
 - 12/16/2020: TWAS-FUSION reference panel added
 - 07/06/2020: GAUSS published as a R-package along with detailed documentations and utility function.
