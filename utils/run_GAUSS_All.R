@@ -52,6 +52,10 @@ stop <- as.numeric(opt$stop)
 
 cat(paste0("Starting GAUSS...\n\n"))
 library(GAUSS)
+sink(jobfile)
+cat(paste0("trying to open file..."))
+sink()
+
 jobfile <- normalizePath(jobfile)
 
 if(is.parallel){

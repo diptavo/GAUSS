@@ -1,5 +1,5 @@
 gauss <-
-  function(gene.set,inf,ggg,cols1,max.prec = 1e+05, ct=250,ct.min = 100,stp = -10,tl = 500,thr = 0.05,verbose = T,LOGF = "out.log"){
+  function(gene.set,inf,ggg,cols1,max.prec = 1e+05, ct=250,ct.min = 100,stp = -10,tl = 500,thr = 0.05,verbose = T,LOGF = "out.log",is.appx = T){
     
     inf = inf[match(colnames(pv.null.wt1),inf[,ggg]),]; inf <- inf[!is.na(inf[,cols1]),]  
     gene.set <- gsub(c(" "), "",gene.set); gene.set <- unique(gene.set)

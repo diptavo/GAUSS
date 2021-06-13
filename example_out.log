@@ -1,0 +1,258 @@
+
+Timing stopped at: 0.032 0.002 0.034
+Timing stopped at: 6.475 0.336 6.804
+ll be used ... 
+Gene-based p-values from SKAT-based test...
+
+loading ref data ...
+
+Number of resamples for GPD approximation is 250
+reading summary and gmt files 
+
+logging in ... example_out.log
+
+output in ... example_out.out
+
+Running gene-set 1: KEGG_GLYCOLYSIS_GLUCONEOGENESIS
+Preprocessing 
+Running resampling 
+Analysis done in 0.175 seconds 
+
+Running gene-set 2: KEGG_CITRATE_CYCLE_TCA_CYCLE
+Preprocessing 
+Running resampling 
+Analysis done in 0.086 seconds 
+
+Running gene-set 3: KEGG_PENTOSE_PHOSPHATE_PATHWAY
+Preprocessing 
+Running resampling 
+Analysis done in 0.082 seconds 
+
+Running gene-set 4: KEGG_PENTOSE_AND_GLUCURONATE_INTERCONVERSIONS
+Preprocessing 
+Running resampling 
+Analysis done in 0.083 seconds 
+
+Running gene-set 5: KEGG_FRUCTOSE_AND_MANNOSE_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.091 seconds 
+
+Running gene-set 6: KEGG_GALACTOSE_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.079 seconds 
+
+Running gene-set 7: KEGG_ASCORBATE_AND_ALDARATE_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.084 seconds 
+
+Running gene-set 8: KEGG_FATTY_ACID_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.106 seconds 
+
+Running gene-set 9: KEGG_STEROID_BIOSYNTHESIS
+Preprocessing 
+Running resampling 
+Analysis done in 0.068 seconds 
+
+Running gene-set 10: KEGG_PRIMARY_BILE_ACID_BIOSYNTHESIS
+Preprocessing 
+Running resampling 
+Analysis done in 0.071 seconds 
+
+Running gene-set 11: KEGG_STEROID_HORMONE_BIOSYNTHESIS
+Preprocessing 
+Running resampling 
+Analysis done in 0.137 seconds 
+
+Running gene-set 12: KEGG_OXIDATIVE_PHOSPHORYLATION
+Preprocessing 
+Running resampling 
+Analysis done in 0.28 seconds 
+
+Running gene-set 13: KEGG_PURINE_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.397 seconds 
+
+Running gene-set 14: KEGG_PYRIMIDINE_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.22 seconds 
+
+Running gene-set 15: KEGG_ALANINE_ASPARTATE_AND_GLUTAMATE_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.088 seconds 
+
+Running gene-set 16: KEGG_GLYCINE_SERINE_AND_THREONINE_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.087 seconds 
+
+Running gene-set 17: KEGG_CYSTEINE_AND_METHIONINE_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.091 seconds 
+
+Running gene-set 18: KEGG_VALINE_LEUCINE_AND_ISOLEUCINE_DEGRADATION
+Preprocessing 
+Running resampling 
+Analysis done in 0.104 seconds 
+
+Running gene-set 19: KEGG_VALINE_LEUCINE_AND_ISOLEUCINE_BIOSYNTHESIS
+Preprocessing 
+Running resampling 
+Analysis done in 0.062 seconds 
+
+Running gene-set 20: KEGG_LYSINE_DEGRADATION
+Preprocessing 
+Running resampling 
+Analysis done in 0.105 seconds 
+
+Running gene-set 21: KEGG_ARGININE_AND_PROLINE_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.131 seconds 
+
+Running gene-set 22: KEGG_HISTIDINE_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.083 seconds 
+
+Running gene-set 23: KEGG_TYROSINE_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.106 seconds 
+
+Running gene-set 24: KEGG_PHENYLALANINE_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.066 seconds 
+
+Running gene-set 25: KEGG_TRYPTOPHAN_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.103 seconds 
+
+Running gene-set 26: KEGG_BETA_ALANINE_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.075 seconds 
+
+Running gene-set 27: KEGG_TAURINE_AND_HYPOTAURINE_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.061 seconds 
+
+Running gene-set 28: KEGG_SELENOAMINO_ACID_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.084 seconds 
+
+Running gene-set 29: KEGG_GLUTATHIONE_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.123 seconds 
+
+Running gene-set 30: KEGG_STARCH_AND_SUCROSE_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.127 seconds 
+
+Running gene-set 31: KEGG_N_GLYCAN_BIOSYNTHESIS
+Preprocessing 
+Running resampling 
+Analysis done in 0.109 seconds 
+
+Running gene-set 32: KEGG_OTHER_GLYCAN_DEGRADATION
+Preprocessing 
+Running resampling 
+Analysis done in 0.065 seconds 
+
+Running gene-set 33: KEGG_O_GLYCAN_BIOSYNTHESIS
+Preprocessing 
+Running resampling 
+Analysis done in 0.087 seconds 
+
+Running gene-set 34: KEGG_AMINO_SUGAR_AND_NUCLEOTIDE_SUGAR_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.106 seconds 
+
+Running gene-set 35: KEGG_GLYCOSAMINOGLYCAN_DEGRADATION
+Preprocessing 
+Running resampling 
+Analysis done in 0.069 seconds 
+
+Running gene-set 36: KEGG_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_CHONDROITIN_SULFATE
+Preprocessing 
+Running resampling 
+Analysis done in 0.068 seconds 
+
+Running gene-set 37: KEGG_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_KERATAN_SULFATE
+Preprocessing 
+Running resampling 
+Analysis done in 0.061 seconds 
+
+Running gene-set 38: KEGG_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_HEPARAN_SULFATE
+Preprocessing 
+Running resampling 
+Analysis done in 0.078 seconds 
+
+Running gene-set 39: KEGG_GLYCEROLIPID_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.125 seconds 
+
+Running gene-set 40: KEGG_INOSITOL_PHOSPHATE_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.126 seconds 
+
+Running gene-set 41: KEGG_GLYCOSYLPHOSPHATIDYLINOSITOL_GPI_ANCHOR_BIOSYNTHESIS
+Preprocessing 
+Running resampling 
+Analysis done in 0.079 seconds 
+
+Running gene-set 42: KEGG_GLYCEROPHOSPHOLIPID_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.186 seconds 
+
+Running gene-set 43: KEGG_ETHER_LIPID_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.087 seconds 
+
+Running gene-set 44: KEGG_ARACHIDONIC_ACID_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.126 seconds 
+
+Running gene-set 45: KEGG_LINOLEIC_ACID_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.08 seconds 
+
+Running gene-set 46: KEGG_ALPHA_LINOLENIC_ACID_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.096 seconds 
+
+Running gene-set 47: KEGG_SPHINGOLIPID_METABOLISM
+Preprocessing 
+Running resampling 
+Analysis done in 0.1 seconds 
+
+Running gene-set 48: KEGG_GLYCOSPHINGOLIPID_BIOSYNTHESIS_LACTO_AND_NEOLACTO_SERIES
+Preprocessing 
+Running resampling 
+Analysis done in 0.077 seconds 
+
+Running gene-set 49: KEGG_GLYCOSPHINGOLIPID_BIOSYNTHESIS_GLOBO_SERIES
+Preprocessing 
+Running resampling 
