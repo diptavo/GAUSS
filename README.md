@@ -33,6 +33,9 @@ The repository can be cloned and installed as:
  R CMD INSTALL GAUSS_1.0.tar.gz 
 ```
 
+If you face trouble in installing the tar zipped file in the above procedure, please download the file from this [link](https://www.dropbox.com/s/iq6w139fag3ozvw/GAUSS_1.0.tar.gz?dl=0)
+
+
 # Usage
 
 Several example files are provided with the package for the user to verify the formats and for toy-examples.
